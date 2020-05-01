@@ -1,0 +1,28 @@
+{
+    "shared": {
+        "resourceName": "testAmplifyFeature",
+        "bucketInput": "testamplifyfeature-dev-input-8i7ezant",
+        "bucketOutput": "testamplifyfeature-dev-output-8i7ezant",
+        "bucket": "amplify-testamplifyfeature-dev-102131-deployment"
+    },
+    "template": {
+        "name": "Amplify_Video_Ott_Hls_Ts_Avc_Aac.json"
+    },
+    "contentDeliveryNetwork": {
+        "signedKey": true,
+        "pemID": "APKAJ5GSMG3RIHMEJ67A",
+        "secretPem": "testAmplifyFeature-pem",
+        "secretPemArn": "arn:aws:secretsmanager:ap-south-1:428745609405:secret:testAmplifyFeature-pem-GSQYAs",
+        "functionName": "testAmplifyFeature-dev-tokenGen",
+        "enableDistribution": true
+    },
+    "cms": {
+        "overrideSchema": false,
+        "editAPI": true
+    },
+    "parameters": {
+        "authRoleName": {
+            "Ref": "AuthRoleName"
+        }
+    }
+}

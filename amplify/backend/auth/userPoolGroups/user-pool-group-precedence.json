@@ -4,7 +4,7 @@
         "precedence": 1,
         "customPolicies": [
             {
-                "PolicyName": "vodee5fa1dc-admin-group-policy",
+                "PolicyName": "testamplifyfeature88a964a8-admin-group-policy",
                 "PolicyDocument": {
                     "Version": "2012-10-17",
                     "Statement": [
@@ -15,7 +15,7 @@
                                 "s3:PutObject",
                                 "s3:DeleteObject"
                             ],
-                            "Resource": "arn:aws:s3:::vodprodsigned-dev-input-jsxbrc5l/public/*"
+                            "Resource": "arn:aws:s3:::testamplifyfeature-dev-input-8i7ezant/public/*"
                         }
                     ]
                 }

@@ -1,4 +1,17 @@
 {
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-testamplifyfeature-dev-102131-authRole",
+			"UnauthRoleArn": "arn:aws:iam::428745609405:role/amplify-testamplifyfeature-dev-102131-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::428745609405:role/amplify-testamplifyfeature-dev-102131-authRole",
+			"Region": "ap-south-1",
+			"DeploymentBucketName": "amplify-testamplifyfeature-dev-102131-deployment",
+			"UnauthRoleName": "amplify-testamplifyfeature-dev-102131-unauthRole",
+			"StackName": "amplify-testamplifyfeature-dev-102131",
+			"StackId": "arn:aws:cloudformation:ap-south-1:428745609405:stack/amplify-testamplifyfeature-dev-102131/87c34210-8b95-11ea-9a9f-0207d27cfd0c",
+			"AmplifyAppId": "d2pnxsmmwxoa3m"
+		}
+	},
 	"auth": {
 		"testamplifyfeature88a964a8": {
 			"service": "Cognito",
@@ -43,7 +56,8 @@
 					"resourceName": "testAmplifyFeature",
 					"attributes": []
 				}
-			]
+			],
+			"lastPushTimeStamp": "2020-05-01T10:28:42.940Z"
 		}
 	},
 	"video": {

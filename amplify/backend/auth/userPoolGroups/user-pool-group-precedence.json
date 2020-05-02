@@ -4,7 +4,7 @@
         "precedence": 1,
         "customPolicies": [
             {
-                "PolicyName": "testamplify7ad95b8b-admin-group-policy",
+                "PolicyName": "amplifytestd30f8200-admin-group-policy",
                 "PolicyDocument": {
                     "Version": "2012-10-17",
                     "Statement": [
@@ -15,7 +15,7 @@
                                 "s3:PutObject",
                                 "s3:DeleteObject"
                             ],
-                            "Resource": "arn:aws:s3:::testamplify-dev-input-slmoc1pm/public/*"
+                            "Resource": "arn:aws:s3:::amplifytest-dev-input-7pgn98xi/public/*"
                         }
                     ]
                 }

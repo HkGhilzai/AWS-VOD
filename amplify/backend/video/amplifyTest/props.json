@@ -1,0 +1,23 @@
+{
+    "shared": {
+        "resourceName": "amplifyTest",
+        "bucketInput": "amplifytest-dev-input-7pgn98xi",
+        "bucketOutput": "amplifytest-dev-output-7pgn98xi",
+        "bucket": "amplify-amplifytest-dev-72042-deployment"
+    },
+    "template": {
+        "name": "Amplify_Video_Ott_Hls_Ts_Avc_Aac.json"
+    },
+    "contentDeliveryNetwork": {
+        "enableDistribution": false
+    },
+    "cms": {
+        "overrideSchema": true,
+        "editAPI": true
+    },
+    "parameters": {
+        "authRoleName": {
+            "Ref": "AuthRoleName"
+        }
+    }
+}

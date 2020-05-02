@@ -1,0 +1,63 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-amplifytest-dev-72042-authRole",
+			"UnauthRoleArn": "arn:aws:iam::428745609405:role/amplify-amplifytest-dev-72042-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::428745609405:role/amplify-amplifytest-dev-72042-authRole",
+			"Region": "ap-south-1",
+			"DeploymentBucketName": "amplify-amplifytest-dev-72042-deployment",
+			"UnauthRoleName": "amplify-amplifytest-dev-72042-unauthRole",
+			"StackName": "amplify-amplifytest-dev-72042",
+			"StackId": "arn:aws:cloudformation:ap-south-1:428745609405:stack/amplify-amplifytest-dev-72042/7af04460-8c45-11ea-9426-028f38a10716",
+			"AmplifyAppId": "d2aanqzh3o6r0"
+		}
+	},
+	"auth": {
+		"amplifytestd30f8200": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		},
+		"userPoolGroups": {
+			"service": "Cognito-UserPool-Groups",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "auth",
+					"resourceName": "amplifytestd30f8200",
+					"attributes": [
+						"UserPoolId",
+						"AppClientIDWeb",
+						"AppClientID",
+						"IdentityPoolId"
+					]
+				}
+			]
+		}
+	},
+	"api": {
+		"amplifytest": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authamplifytestd30f8200"
+						}
+					}
+				}
+			}
+		}
+	},
+	"video": {
+		"amplifyTest": {
+			"service": "video",
+			"serviceType": "video-on-demand",
+			"providerPlugin": "awscloudformation",
+			"sha": "29956194bcb3738df2ddaec0e179370c4c53b85d"
+		}
+	}
+}

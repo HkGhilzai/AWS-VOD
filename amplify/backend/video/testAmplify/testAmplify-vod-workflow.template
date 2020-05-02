@@ -1,4 +1,4 @@
-Description: testAmplifyFeature
+Description: testAmplify
 
 Parameters:
   env:
@@ -17,17 +17,17 @@ Parameters:
     Type: String
     Description: Store template and lambda package
     AllowedPattern: "[a-zA-Z][a-zA-Z0-9-_]*"
-    Default: "amplify-testamplifyfeature-dev-102131-deployment"
+    Default: "amplify-testamplify-dev-54754-deployment"
   pS3InputName:
     Type: String
     Description: Store template and lambda package
     AllowedPattern: "[a-zA-Z][a-zA-Z0-9-_]*"
-    Default: "testamplifyfeature-dev-input-8i7ezant"
+    Default: "testamplify-dev-input-slmoc1pm"
   pS3OutputName:
     Type: String
     Description: Store template and lambda package
     AllowedPattern: "[a-zA-Z][a-zA-Z0-9-_]*"
-    Default: "testamplifyfeature-dev-output-8i7ezant"
+    Default: "testamplify-dev-output-slmoc1pm"
   pSourceFolder:
     Type: String
     Description: Store template and lambda package
@@ -37,7 +37,7 @@ Parameters:
     Type: String
     Description: ProjectName
     AllowedPattern: "[a-zA-Z][a-zA-Z0-9-_]*"
-    Default: testAmplifyFeature
+    Default: testAmplify
   pCloudfrontEnabled:
     Type: String
     Description: Boolean to enable/disable cloudfront
@@ -91,9 +91,9 @@ Resources:
     Properties:
       TemplateURL: !Sub "https://s3.amazonaws.com/${pS3}/${pSourceFolder}/CFTokenGen.template"
       Parameters:
-          pPemID: APKAJ5GSMG3RIHMEJ67A
-          pSecretPem: testAmplifyFeature-pem
-          pSecretPemArn: arn:aws:secretsmanager:ap-south-1:428745609405:secret:testAmplifyFeature-pem-GSQYAs
+          pPemID: ABCDEFJHGKI
+          pSecretPem: testAmplify-pem
+          pSecretPemArn: arn:aws:secretsmanager:ap-south-1:428745609405:secret:testAmplify-pem-gUMSsr
           pDomainName: !GetAtt rCloudfrontDistribution.Outputs.oCFDomain
           pS3: !Ref pS3
           pFunctionName: 

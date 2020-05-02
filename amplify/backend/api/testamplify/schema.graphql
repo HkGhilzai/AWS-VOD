@@ -1,3 +1,5 @@
+
+
 type vodAsset @model (subscriptions: {level: public})
 @auth(
   rules: [
@@ -24,5 +26,5 @@ type videoObject @model
 )
 {
   id:ID!
-  token: String @function(name: "testAmplifyFeature-dev-tokenGen")
+  token: String @function(name: "testAmplify-dev-tokenGen")
 }

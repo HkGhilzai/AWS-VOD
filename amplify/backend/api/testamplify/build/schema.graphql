@@ -1,9 +1,3 @@
-type Todo {
-  id: ID!
-  name: String!
-  description: String
-}
-
 type vodAsset {
   id: ID!
   title: String!
@@ -21,8 +15,8 @@ enum ModelSortDirection {
   DESC
 }
 
-type ModelTodoConnection {
-  items: [Todo]
+type ModelvodAssetConnection {
+  items: [vodAsset]
   nextToken: String
 }
 
@@ -99,13 +93,13 @@ input ModelSizeInput {
   between: [Int]
 }
 
-input ModelTodoFilterInput {
+input ModelvodAssetFilterInput {
   id: ModelIDInput
-  name: ModelStringInput
+  title: ModelStringInput
   description: ModelStringInput
-  and: [ModelTodoFilterInput]
-  or: [ModelTodoFilterInput]
-  not: ModelTodoFilterInput
+  and: [ModelvodAssetFilterInput]
+  or: [ModelvodAssetFilterInput]
+  not: ModelvodAssetFilterInput
 }
 
 enum ModelAttributeTypes {
@@ -122,74 +116,10 @@ enum ModelAttributeTypes {
 }
 
 type Query {
-  getTodo(id: ID!): Todo
-  listTodos(filter: ModelTodoFilterInput, limit: Int, nextToken: String): ModelTodoConnection
   getVodAsset(id: ID!): vodAsset
   listVodAssets(filter: ModelvodAssetFilterInput, limit: Int, nextToken: String): ModelvodAssetConnection
   getVideoObject(id: ID!): videoObject
   listVideoObjects(filter: ModelvideoObjectFilterInput, limit: Int, nextToken: String): ModelvideoObjectConnection
-}
-
-input CreateTodoInput {
-  id: ID
-  name: String!
-  description: String
-}
-
-input UpdateTodoInput {
-  id: ID!
-  name: String
-  description: String
-}
-
-input DeleteTodoInput {
-  id: ID
-}
-
-type Mutation {
-  createTodo(input: CreateTodoInput!, condition: ModelTodoConditionInput): Todo
-  updateTodo(input: UpdateTodoInput!, condition: ModelTodoConditionInput): Todo
-  deleteTodo(input: DeleteTodoInput!, condition: ModelTodoConditionInput): Todo
-  createVodAsset(input: CreateVodAssetInput!, condition: ModelvodAssetConditionInput): vodAsset
-  updateVodAsset(input: UpdateVodAssetInput!, condition: ModelvodAssetConditionInput): vodAsset
-  deleteVodAsset(input: DeleteVodAssetInput!, condition: ModelvodAssetConditionInput): vodAsset
-  createVideoObject(input: CreateVideoObjectInput!, condition: ModelvideoObjectConditionInput): videoObject
-  updateVideoObject(input: UpdateVideoObjectInput!, condition: ModelvideoObjectConditionInput): videoObject
-  deleteVideoObject(input: DeleteVideoObjectInput!, condition: ModelvideoObjectConditionInput): videoObject
-}
-
-input ModelTodoConditionInput {
-  name: ModelStringInput
-  description: ModelStringInput
-  and: [ModelTodoConditionInput]
-  or: [ModelTodoConditionInput]
-  not: ModelTodoConditionInput
-}
-
-type Subscription {
-  onCreateTodo: Todo @aws_subscribe(mutations: ["createTodo"])
-  onUpdateTodo: Todo @aws_subscribe(mutations: ["updateTodo"])
-  onDeleteTodo: Todo @aws_subscribe(mutations: ["deleteTodo"])
-  onCreateVodAsset: vodAsset @aws_subscribe(mutations: ["createVodAsset"])
-  onUpdateVodAsset: vodAsset @aws_subscribe(mutations: ["updateVodAsset"])
-  onDeleteVodAsset: vodAsset @aws_subscribe(mutations: ["deleteVodAsset"])
-  onCreateVideoObject: videoObject @aws_subscribe(mutations: ["createVideoObject"])
-  onUpdateVideoObject: videoObject @aws_subscribe(mutations: ["updateVideoObject"])
-  onDeleteVideoObject: videoObject @aws_subscribe(mutations: ["deleteVideoObject"])
-}
-
-type ModelvodAssetConnection {
-  items: [vodAsset]
-  nextToken: String
-}
-
-input ModelvodAssetFilterInput {
-  id: ModelIDInput
-  title: ModelStringInput
-  description: ModelStringInput
-  and: [ModelvodAssetFilterInput]
-  or: [ModelvodAssetFilterInput]
-  not: ModelvodAssetFilterInput
 }
 
 input CreateVodAssetInput {
@@ -210,12 +140,30 @@ input DeleteVodAssetInput {
   id: ID
 }
 
+type Mutation {
+  createVodAsset(input: CreateVodAssetInput!, condition: ModelvodAssetConditionInput): vodAsset
+  updateVodAsset(input: UpdateVodAssetInput!, condition: ModelvodAssetConditionInput): vodAsset
+  deleteVodAsset(input: DeleteVodAssetInput!, condition: ModelvodAssetConditionInput): vodAsset
+  createVideoObject(input: CreateVideoObjectInput!, condition: ModelvideoObjectConditionInput): videoObject
+  updateVideoObject(input: UpdateVideoObjectInput!, condition: ModelvideoObjectConditionInput): videoObject
+  deleteVideoObject(input: DeleteVideoObjectInput!, condition: ModelvideoObjectConditionInput): videoObject
+}
+
 input ModelvodAssetConditionInput {
   title: ModelStringInput
   description: ModelStringInput
   and: [ModelvodAssetConditionInput]
   or: [ModelvodAssetConditionInput]
   not: ModelvodAssetConditionInput
+}
+
+type Subscription {
+  onCreateVodAsset: vodAsset @aws_subscribe(mutations: ["createVodAsset"])
+  onUpdateVodAsset: vodAsset @aws_subscribe(mutations: ["updateVodAsset"])
+  onDeleteVodAsset: vodAsset @aws_subscribe(mutations: ["deleteVodAsset"])
+  onCreateVideoObject: videoObject @aws_subscribe(mutations: ["createVideoObject"])
+  onUpdateVideoObject: videoObject @aws_subscribe(mutations: ["updateVideoObject"])
+  onDeleteVideoObject: videoObject @aws_subscribe(mutations: ["deleteVideoObject"])
 }
 
 type ModelvideoObjectConnection {

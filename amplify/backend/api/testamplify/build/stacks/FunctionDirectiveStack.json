@@ -86,7 +86,7 @@
         }
     },
     "Resources": {
-        "TestAmplifyFeatureDevTokenGenLambdaDataSourceRole": {
+        "TestAmplifyDevTokenGenLambdaDataSourceRole": {
             "Type": "AWS::IAM::Role",
             "Properties": {
                 "RoleName": {
@@ -96,7 +96,7 @@
                             "Fn::Join": [
                                 "-",
                                 [
-                                    "TestAmplifyFeatureDevTf7e3",
+                                    "TestAmplifyDevTokenGenac9e",
                                     {
                                         "Ref": "GetAttGraphQLAPIApiId"
                                     },
@@ -110,7 +110,7 @@
                             "Fn::Join": [
                                 "-",
                                 [
-                                    "TestAmplifyFeatureDevTokenGenf7e3",
+                                    "TestAmplifyDevTokenGenac9e",
                                     {
                                         "Ref": "GetAttGraphQLAPIApiId"
                                     }
@@ -147,13 +147,13 @@
                                             "HasEnvironmentParameter",
                                             {
                                                 "Fn::Sub": [
-                                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplifyFeature-dev-tokenGen",
+                                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplify-dev-tokenGen",
                                                     {}
                                                 ]
                                             },
                                             {
                                                 "Fn::Sub": [
-                                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplifyFeature-dev-tokenGen",
+                                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplify-dev-tokenGen",
                                                     {}
                                                 ]
                                             }
@@ -166,17 +166,17 @@
                 ]
             }
         },
-        "TestAmplifyFeatureDevTokenGenLambdaDataSource": {
+        "TestAmplifyDevTokenGenLambdaDataSource": {
             "Type": "AWS::AppSync::DataSource",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "Name": "TestAmplifyFeatureDevTokenGenLambdaDataSource",
+                "Name": "TestAmplifyDevTokenGenLambdaDataSource",
                 "Type": "AWS_LAMBDA",
                 "ServiceRoleArn": {
                     "Fn::GetAtt": [
-                        "TestAmplifyFeatureDevTokenGenLambdaDataSourceRole",
+                        "TestAmplifyDevTokenGenLambdaDataSourceRole",
                         "Arn"
                     ]
                 },
@@ -186,13 +186,13 @@
                             "HasEnvironmentParameter",
                             {
                                 "Fn::Sub": [
-                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplifyFeature-dev-tokenGen",
+                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplify-dev-tokenGen",
                                     {}
                                 ]
                             },
                             {
                                 "Fn::Sub": [
-                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplifyFeature-dev-tokenGen",
+                                    "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:testAmplify-dev-tokenGen",
                                     {}
                                 ]
                             }
@@ -200,16 +200,16 @@
                     }
                 }
             },
-            "DependsOn": "TestAmplifyFeatureDevTokenGenLambdaDataSourceRole"
+            "DependsOn": "TestAmplifyDevTokenGenLambdaDataSourceRole"
         },
-        "InvokeTestAmplifyFeatureDevTokenGenLambdaDataSource": {
+        "InvokeTestAmplifyDevTokenGenLambdaDataSource": {
             "Type": "AWS::AppSync::FunctionConfiguration",
             "Properties": {
                 "ApiId": {
                     "Ref": "AppSyncApiId"
                 },
-                "Name": "InvokeTestAmplifyFeatureDevTokenGenLambdaDataSource",
-                "DataSourceName": "TestAmplifyFeatureDevTokenGenLambdaDataSource",
+                "Name": "InvokeTestAmplifyDevTokenGenLambdaDataSource",
+                "DataSourceName": "TestAmplifyDevTokenGenLambdaDataSource",
                 "FunctionVersion": "2018-05-29",
                 "RequestMappingTemplateS3Location": {
                     "Fn::Sub": [
@@ -225,7 +225,7 @@
                                 "Fn::Join": [
                                     ".",
                                     [
-                                        "InvokeTestAmplifyFeatureDevTokenGenLambdaDataSource",
+                                        "InvokeTestAmplifyDevTokenGenLambdaDataSource",
                                         "req",
                                         "vtl"
                                     ]
@@ -248,7 +248,7 @@
                                 "Fn::Join": [
                                     ".",
                                     [
-                                        "InvokeTestAmplifyFeatureDevTokenGenLambdaDataSource",
+                                        "InvokeTestAmplifyDevTokenGenLambdaDataSource",
                                         "res",
                                         "vtl"
                                     ]
@@ -258,7 +258,7 @@
                     ]
                 }
             },
-            "DependsOn": "TestAmplifyFeatureDevTokenGenLambdaDataSource"
+            "DependsOn": "TestAmplifyDevTokenGenLambdaDataSource"
         },
         "videoObjecttokenResolver": {
             "Type": "AWS::AppSync::Resolver",
@@ -273,7 +273,7 @@
                     "Functions": [
                         {
                             "Fn::GetAtt": [
-                                "InvokeTestAmplifyFeatureDevTokenGenLambdaDataSource",
+                                "InvokeTestAmplifyDevTokenGenLambdaDataSource",
                                 "FunctionId"
                             ]
                         }
@@ -328,7 +328,7 @@
                     ]
                 }
             },
-            "DependsOn": "InvokeTestAmplifyFeatureDevTokenGenLambdaDataSource"
+            "DependsOn": "InvokeTestAmplifyDevTokenGenLambdaDataSource"
         }
     },
     "Outputs": {},

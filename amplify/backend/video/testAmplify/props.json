@@ -1,0 +1,28 @@
+{
+    "shared": {
+        "resourceName": "testAmplify",
+        "bucketInput": "testamplify-dev-input-slmoc1pm",
+        "bucketOutput": "testamplify-dev-output-slmoc1pm",
+        "bucket": "amplify-testamplify-dev-54754-deployment"
+    },
+    "template": {
+        "name": "Amplify_Video_Ott_Hls_Ts_Avc_Aac.json"
+    },
+    "contentDeliveryNetwork": {
+        "signedKey": true,
+        "pemID": "ABCDEFJHGKI",
+        "secretPem": "testAmplify-pem",
+        "secretPemArn": "arn:aws:secretsmanager:ap-south-1:428745609405:secret:testAmplify-pem-gUMSsr",
+        "functionName": "testAmplify-dev-tokenGen",
+        "enableDistribution": true
+    },
+    "cms": {
+        "overrideSchema": true,
+        "editAPI": false
+    },
+    "parameters": {
+        "authRoleName": {
+            "Ref": "AuthRoleName"
+        }
+    }
+}

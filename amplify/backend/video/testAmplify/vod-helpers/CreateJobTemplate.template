@@ -6,7 +6,7 @@ Resources:
     Properties:
       Description: Default Encoding Template (Apple HLS @ 1080p30)
       Category: OTT-HLS
-      Name: Amplify_Video_Ott_Hls_Ts_Avc_Aac-testAmplifyFeature-dev
+      Name: Amplify_Video_Ott_Hls_Ts_Avc_Aac-testAmplify-dev
       AccelerationSettings:
         Mode: DISABLED
       SettingsJson:

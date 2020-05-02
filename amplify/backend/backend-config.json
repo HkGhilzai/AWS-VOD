@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"testamplifyfeature88a964a8": {
+		"testamplify7ad95b8b": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": []
@@ -11,7 +11,7 @@
 			"dependsOn": [
 				{
 					"category": "auth",
-					"resourceName": "testamplifyfeature88a964a8",
+					"resourceName": "testamplify7ad95b8b",
 					"attributes": [
 						"UserPoolId",
 						"AppClientIDWeb",
@@ -23,7 +23,7 @@
 		}
 	},
 	"api": {
-		"testamplifyfeature": {
+		"testamplify": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -32,7 +32,7 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authtestamplifyfeature88a964a8"
+							"userPoolId": "authtestamplify7ad95b8b"
 						}
 					}
 				}
@@ -40,18 +40,18 @@
 			"dependsOn": [
 				{
 					"category": "video",
-					"resourceName": "testAmplifyFeature",
+					"resourceName": "testAmplify",
 					"attributes": []
 				}
 			]
 		}
 	},
 	"video": {
-		"testAmplifyFeature": {
+		"testAmplify": {
 			"service": "video",
 			"serviceType": "video-on-demand",
 			"providerPlugin": "awscloudformation",
-			"sha": "0885438e9da6a4b65adec7dc37f2089e814238c8"
+			"sha": "570c345ab22634d283fb7e7479dd237e689614e1"
 		}
 	}
 }

@@ -29,5 +29,6 @@ build/
 dist/
 node_modules/
 aws-exports.js
+aws-video-exports.js
 awsconfiguration.json
 amplify/team-provider-info.json

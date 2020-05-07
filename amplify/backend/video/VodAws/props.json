@@ -1,9 +1,9 @@
 {
     "shared": {
         "resourceName": "VodAws",
-        "bucketInput": "vodaws-prod-input-jn8qu1gy",
-        "bucketOutput": "vodaws-prod-output-jn8qu1gy",
-        "bucket": "amplify-vodaws-prod-113926-deployment"
+        "bucketInput": "vodaws-prod-input-07051149",
+        "bucketOutput": "vodaws-prod-output-07051149",
+        "bucket": "amplify-vodaws-prod-07051149-deployment"
     },
     "template": {
         "name": "Amplify_Video_Ott_Hls_Ts_Avc_Aac.json"
@@ -12,7 +12,7 @@
         "signedKey": true,
         "pemID": "APKAJ5GSMG3RIHMEJ67A",
         "secretPem": "VodAws-pem",
-        "secretPemArn": "arn:aws:secretsmanager:ap-south-1:428745609405:secret:VodAws-pem-WArqOe",
+        "secretPemArn": "arn:aws:secretsmanager:us-east-1:428745609405:secret:VodAws-pem-8N61S9",
         "functionName": "VodAws-prod-tokenGen",
         "enableDistribution": true
     },

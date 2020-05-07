@@ -1,22 +1,37 @@
 {
 	"providers": {
 		"awscloudformation": {
-			"AuthRoleName": "amplify-amplifytest-dev-72042-authRole",
-			"UnauthRoleArn": "arn:aws:iam::428745609405:role/amplify-amplifytest-dev-72042-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::428745609405:role/amplify-amplifytest-dev-72042-authRole",
+			"AuthRoleName": "amplify-vodaws-prod-113926-authRole",
+			"UnauthRoleArn": "arn:aws:iam::428745609405:role/amplify-vodaws-prod-113926-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::428745609405:role/amplify-vodaws-prod-113926-authRole",
 			"Region": "ap-south-1",
-			"DeploymentBucketName": "amplify-amplifytest-dev-72042-deployment",
-			"UnauthRoleName": "amplify-amplifytest-dev-72042-unauthRole",
-			"StackName": "amplify-amplifytest-dev-72042",
-			"StackId": "arn:aws:cloudformation:ap-south-1:428745609405:stack/amplify-amplifytest-dev-72042/7af04460-8c45-11ea-9426-028f38a10716",
-			"AmplifyAppId": "d2aanqzh3o6r0"
+			"DeploymentBucketName": "amplify-vodaws-prod-113926-deployment",
+			"UnauthRoleName": "amplify-vodaws-prod-113926-unauthRole",
+			"StackName": "amplify-vodaws-prod-113926",
+			"StackId": "arn:aws:cloudformation:ap-south-1:428745609405:stack/amplify-vodaws-prod-113926/3e03dcf0-8f8e-11ea-b2c1-0aa7e2913d94",
+			"AmplifyAppId": "d1vog41y329ir6"
 		}
 	},
 	"auth": {
-		"amplifytestd30f8200": {
+		"vodawsc165ba1e": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
-			"dependsOn": []
+			"dependsOn": [],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vodaws-prod-113926-deployment/amplify-cfn-templates/auth/vodawsc165ba1e-cloudformation-template.yml",
+				"logicalId": "authvodawsc165ba1e"
+			},
+			"lastPushTimeStamp": "2020-05-06T12:04:28.269Z",
+			"output": {
+				"AppClientSecret": "1qmg575ojce25qt4c9ntsb6gmvi2gkcpvn745in6crk7otl74850",
+				"UserPoolId": "ap-south-1_JY5kDdNvG",
+				"AppClientIDWeb": "405pkn81519agfvd6mh13clvlr",
+				"AppClientID": "45aqm4qn7q7551u86m2reklq37",
+				"IdentityPoolId": "ap-south-1:67d6c92c-09a6-4f42-ad97-3c728de0c3b0",
+				"IdentityPoolName": "vodawsc165ba1e_identitypool_c165ba1e__prod",
+				"UserPoolName": "vodawsc165ba1e_userpool_c165ba1e"
+			},
+			"lastPushDirHash": "APBo2tbFZOd8RYXm4z6l4m30Vp4="
 		},
 		"userPoolGroups": {
 			"service": "Cognito-UserPool-Groups",
@@ -24,7 +39,7 @@
 			"dependsOn": [
 				{
 					"category": "auth",
-					"resourceName": "amplifytestd30f8200",
+					"resourceName": "vodawsc165ba1e",
 					"attributes": [
 						"UserPoolId",
 						"AppClientIDWeb",
@@ -32,11 +47,20 @@
 						"IdentityPoolId"
 					]
 				}
-			]
+			],
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vodaws-prod-113926-deployment/amplify-cfn-templates/auth/template.json",
+				"logicalId": "authuserPoolGroups"
+			},
+			"lastPushTimeStamp": "2020-05-06T12:04:28.269Z",
+			"output": {
+				"AdminGroupRole": "arn:aws:iam::428745609405:role/ap-south-1_JY5kDdNvG-AdminGroupRole"
+			},
+			"lastPushDirHash": "IzS9uzfm52A0CSrZwzJYqo49cKw="
 		}
 	},
 	"api": {
-		"amplifytest": {
+		"vodaws": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
@@ -45,19 +69,45 @@
 					"defaultAuthentication": {
 						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
 						"userPoolConfig": {
-							"userPoolId": "authamplifytestd30f8200"
+							"userPoolId": "authvodawsc165ba1e"
 						}
 					}
+				},
+				"GraphQLAPIIdOutput": "5llrlcuauzhvno6vyoxjt45uma",
+				"GraphQLAPIEndpointOutput": "https://qmkq6gxqzndg3i3bss3okb6grq.appsync-api.ap-south-1.amazonaws.com/graphql"
+			},
+			"dependsOn": [
+				{
+					"category": "video",
+					"resourceName": "VodAws",
+					"attributes": []
 				}
-			}
+			],
+			"lastPushTimeStamp": "2020-05-06T12:04:28.269Z",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vodaws-prod-113926-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apivodaws"
+			},
+			"lastPushDirHash": "4zzPWN9hyreU5NZMk3PXhFWfgl8="
 		}
 	},
 	"video": {
-		"amplifyTest": {
+		"VodAws": {
 			"service": "video",
 			"serviceType": "video-on-demand",
 			"providerPlugin": "awscloudformation",
-			"sha": "29956194bcb3738df2ddaec0e179370c4c53b85d"
+			"sha": "94c55ba2a89a6ae8607016be9e3b97d3b7efcbb8",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-vodaws-prod-113926-deployment/amplify-cfn-templates/video/VodAws-vod-workflow.template",
+				"logicalId": "videoVodAws"
+			},
+			"lastPushTimeStamp": "2020-05-06T12:04:28.269Z",
+			"output": {
+				"oVodOutputUrl": "d1n01yr9t3srsq.cloudfront.net",
+				"oVODOutputS3": "vodaws-prod-output-jn8qu1gy",
+				"oVODInputS3": "vodaws-prod-input-jn8qu1gy"
+			},
+			"lastPushDirHash": "QD+jYt1LuPYJmXl61MWg2Q1F63w="
 		}
 	}
 }

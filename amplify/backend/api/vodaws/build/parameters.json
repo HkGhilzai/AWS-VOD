@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 0,
+    "AppSyncApiName": "vodaws",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authvodawsc165ba1e",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-vodaws-prod-113926-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/af8bfe9ae5e24edc848d2283dade54541afc3efa"
+}
